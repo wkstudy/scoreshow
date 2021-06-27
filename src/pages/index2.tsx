@@ -48,6 +48,7 @@ const columns: ProColumns<ColType>[] = [
   {
     title: '差值',
     hideInSearch: true,
+    sorter: (a, b) => (+a.min - (+a.proscore)) - (+b.min - (+b.proscore)),
     render: (r, record, s) => {
       if (record.proscore !== '-') {
         return <>
